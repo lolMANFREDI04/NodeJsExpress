@@ -11,7 +11,7 @@ services:
       MONGODB_URI: mongodb://mongo:27017/testdb
       KEYCLOAK_REALM: "prova"
       KEYCLOAK_CLIENT: "prova-client"
-      KEYCLOAK_URL: "http://localhost:8080"
+      KEYCLOAK_URL: "http://192.168.1.5:8080"
     networks:
       - my_custom_network
 
