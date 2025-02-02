@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  # Definisce o sovrascrive la config nodeapp
+  nodeapp:
+    # Indica che si estende il servizio `nodeapp` dal file base
+    # con override delle variabili d'ambiente, se vuoi
+    environment:
+      MONGODB_URI: mongodb://mongo:27017/testdb
+      PORT: 3000
+      KEYCLOAK_REALM: "prova"
+      KEYCLOAK_CLIENT: "prova-client"
+      KEYCLOAK_URL: "http://192.168.1.5:8080"
+  
+  mongo:
+    image: mongo:6
+    container_name: my-mongo
+    networks:
+      - my_custom_network
+    # ports:
+    #   - "27017:27017"
+
+networks:
+  my_custom_network:
+    driver: bridge
