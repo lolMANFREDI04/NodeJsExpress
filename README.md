@@ -5,6 +5,16 @@ Comando per la build su container docker senza database:
 - docker-compose up --build
 
 
+Per startarlo in locale
+- npm i
+
+- assicursi di avere MongoDB in ascolto sulla porta corretta
+
+- assicursi di avere Keycloak in ascolto sulla porta corretta e di aver cambiato/copiato il realm, client, ecc.
+
+- npm start
+
+
 route api:
 - - studenti
 - // GET /studente/all - Ottiene tutti gli studenti

@@ -9,6 +9,7 @@ const db = require('#db/mongodb');
 const port = process.env.PORT;
 
 // Routes
+const indexRouter = require('#routes/index');
 const votiRouter = require('#routes/voti');
 const studentiRouter = require('#routes/studenti');
 
@@ -24,6 +25,7 @@ app.use(express.json());
 app.use(cors());
 
 // Register routes
+app.use('/', indexRouter);
 app.use('/voti', votiRouter);
 app.use('/studente', studentiRouter);
 
