@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  nodeapp:
+    build: .
+    container_name: nodejs-express
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      MONGODB_URI: mongodb://mongo:27017/testdb
+      KEYCLOAK_REALM: "prova"
+      KEYCLOAK_CLIENT: "prova-client"
+      KEYCLOAK_URL: "http://localhost:8080"
+    networks:
+      - my_custom_network
+
+networks:
+  my_custom_network:
+    driver: bridge

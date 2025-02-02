@@ -1,0 +1,27 @@
+{
+  "name": "nodejsexpress",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "imports": {
+    "#routes/*": "./routes/*.js",
+    "#middlewares/*": "./middlewares/*.js",
+    "#db/*": "./db/*.js",
+    "#models/*": "./models/*.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "keycloak-connect": "^26.1.1",
+    "mongoose": "^8.9.6",
+    "nodemon": "^3.1.9"
+  }
+}
