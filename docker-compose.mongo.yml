@@ -17,8 +17,8 @@ services:
     container_name: my-mongo
     networks:
       - my_custom_network
-    # ports:
-    #   - "27017:27017"
+    ports:
+      - "27017:27017"
 
 networks:
   my_custom_network:

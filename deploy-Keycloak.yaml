@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: keycloak
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: keycloak
+  template:
+    metadata:
+      labels:
+        app: keycloak
+    spec:
+      containers:
+      - name: keycloak
+        image: quay.io/keycloak/keycloak:latest
+        ports:
+        - containerPort: 8080
+        env:
+          - name: KEYCLOAK_ADMIN
+            value: "admin"
+          - name: KEYCLOAK_ADMIN_PASSWORD
+            value: "admin"
+        # Avvia Keycloak in modalità sviluppo (start-dev) abilitando HTTP
+        args: ["start-dev", "--http-enabled=true"]
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: keycloak-http
+  namespace: default
+spec:
+  type: ClusterIP
+  selector:
+    app: keycloak
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
