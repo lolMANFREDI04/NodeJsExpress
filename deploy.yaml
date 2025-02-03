@@ -29,7 +29,7 @@ spec:
         - name: KEYCLOAK_CLIENT
           value: "prova-client"
         - name: KEYCLOAK_URL
-          value: "http://localhost:8080"
+          value: "http://172.25.7.58:30230"
 ---
 apiVersion: v1
 kind: Service

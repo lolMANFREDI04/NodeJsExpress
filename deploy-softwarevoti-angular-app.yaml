@@ -31,13 +31,15 @@ spec:
         - name: ClientId
           value: "prova-client"
         - name: keycloakUrl
-          value: "http://172.25.7.58:31760"
+          value: "http://172.25.7.58:30230"
         - name: redirectUri
           value: "http://172.25.7.58:30021"
         - name: Scope
           value: "openid profile email"
         - name: TokenEndpoint
-          value: "http://172.25.7.58:31760/realms/prova/protocol/openid-connect/token"
+          value: "http://172.25.7.58:30230/realms/prova/protocol/openid-connect/token"
+        - name: realm
+          value: "prova"
 ---
 apiVersion: v1
 kind: Service
